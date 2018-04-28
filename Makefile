@@ -3,14 +3,14 @@
 
 all: clean install run-example-amplifier
 
-build:
+build: clean
 	python setup.py bdist_wheel
 	python setup.py sdist
 
 upload-dev:
 	twine upload --repository-url https://test.pypi.org/legacy/ dist/*
 
-upload:
+upload: build
 	twine upload dist/*
 
 install:
