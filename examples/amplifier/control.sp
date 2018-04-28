@@ -10,16 +10,16 @@ set noacct
 options NOINIT NOMOD
 
 * transient analysis with:
-*   - suggested time step: 1ms
-*   - duration of 1s
+*   - suggested time step: 10us
+*   - duration of 10ms
 *   - start time at 0s
-*   - max time step: 1ms
+*   - max time step: 10us
 tran 10e−6 1e-2 0 10e-6
 
 run ; run the actual simulation
 
 * Output data
-print V(vin) V(vout)
+print V(vin) V(vout) ; irrelevant since we are parsing the raw file, not the log
 
 * raw file path can be specified with -r flag: ngspice -r data.raw
 * it defaults to ./rawspice.raw if a path is not specified with -r.
