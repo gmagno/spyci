@@ -1,0 +1,27 @@
+** Inverting Amplifier with OpAmp (LM741) -- Simulation circuit **
+
+* add control section
+.include control.sp
+
+* sub-circuits (dependencies)
+.include LM741.sub
+
+************************
+* main circuit netlist *
+************************
+
+* sensor model
+Vsource vs 0 dc 0 ac 1 sin (0 1 1K) ; sin (VOffset VAmplitude Freq)
+Rs vs vin 10
+
+* amplifier
+Vc vcc 0 10
+Ve vee 0 -10
+R1 vin neg 1K
+R2 neg vout 2K
+XU1 0 neg vcc vee vout LM741/NS ; +IN -IN  V+ V- OUT
+
+* load
+Ro out 0 10K
+
+.end

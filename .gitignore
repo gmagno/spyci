@@ -1,0 +1,7 @@
+.venv
+.vscode
+*.pyc
+build/
+dist/
+spr.egg*
+*.log
