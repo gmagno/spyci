@@ -16,6 +16,13 @@ pip install spr
 ```
 
 #### From source code
+
+```
+pip install git+https://github.com/goncalo-godwitlabs/spr.git
+```
+
+or
+
 ```
 git clone git@github.com:goncalo-godwitlabs/spr.git
 cd spr/
