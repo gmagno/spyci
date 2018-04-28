@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = "0.1.0"
+version = "0.2.0"
 
 
 # Always prefer setuptools over distutils
@@ -25,7 +25,7 @@ with open(path.join(here, "requirements-dev.txt")) as f:
 
 setup(
     name="spr",
-    version="0.1.0",
+    version=version,
     description="A tiny Python package to parse spice raw data files",
     long_description=long_description,
     long_description_content_type="text/markdown",
