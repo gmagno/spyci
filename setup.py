@@ -48,7 +48,6 @@ setup(
     install_requires=requirements,
     extras_require={
         "dev": requirements_dev,
-        "test": requirements_test,
     },
     data_files=[(
         '.', [
