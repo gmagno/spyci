@@ -10,7 +10,7 @@
 * main circuit netlist *
 ************************
 
-* sensor model
+* input signal
 Vsource vs 0 dc 0 ac 1 sin (0 1 1K) ; sin (VOffset VAmplitude Freq)
 Rs vs vin 10
 
