@@ -114,7 +114,7 @@ make run-example-lp_filter
 
 which will fire ngspice generating output.log and rawspice.raw files and also plots the gain `vout`/`vin` in dB.
 
-![](examples/lp_filter/lp_filter.png)
+![](examples/lp_filter/plot.png)
 
 
 ## License
