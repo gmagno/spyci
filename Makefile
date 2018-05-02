@@ -1,7 +1,7 @@
 
-.PHONY: all install test clean
+.PHONY: all install test clean run-examples
 
-all: clean install run-example-amplifier
+all: clean install run-examples
 
 build: clean
 	python setup.py bdist_wheel
@@ -19,8 +19,14 @@ install:
 # test:
 # 	py.test tests
 
+run-examples: run-example-amplifier run-example-lp_filter
+
 run-example-amplifier:
 	cd examples/amplifier && ngspice -r rawspice.raw -o output.log main.cir && python plot.py
+
+run-example-lp_filter:
+	cd examples/lp_filter && ngspice -r rawspice.raw -o output.log main.cir && python plot.py
+
 
 clean:
 	rm -rf dist/ build/ spr.egg*

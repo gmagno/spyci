@@ -19,6 +19,8 @@ def main():
         )
     plt.legend()
     plt.grid(True)
+    plt.savefig("plot.svg")
+    plt.savefig("plot.png")
     plt.show()
 
 if __name__ == "__main__":

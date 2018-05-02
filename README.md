@@ -96,6 +96,27 @@ which will fire ngspice generating output.log and rawspice.raw files and also pl
 ![](examples/amplifier/plot.png)
 
 
+## Second order low pass filter with an opamp LM741
+
+Check the directory `examples/lp_filter/` for details on the cirtcuit and the simulation files.
+
+The schematic:
+
+![](examples/lp_filter/schematic.png)
+
+Run the simulation with:
+
+```
+git clone git@github.com:goncalo-godwitlabs/spr.git
+cd spr
+make run-example-lp_filter
+```
+
+which will fire ngspice generating output.log and rawspice.raw files and also plots the gain `vout`/`vin` in dB.
+
+![](examples/lp_filter/lp_filter.png)
+
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details

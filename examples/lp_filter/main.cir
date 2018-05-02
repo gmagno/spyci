@@ -1,0 +1,31 @@
+** 2nd Order Low Pass Filter with an OpAmp (LM741) -- Simulation circuit **
+
+* add control section
+.include control.sp
+
+* sub-circuits (dependencies)
+.include LM741.sub
+
+************************
+* main circuit netlist *
+************************
+
+* input signal
+Vsource vs 0 dc 0 ac 1 sin (0 1 10) ; sin (VOffset VAmplitude Freq)
+Rs vs vin 10
+
+* filter
+R1 vin n_r1r2c1 1K
+R2 n_r1r2c1 pos 1K
+C1 n_r1r2c1 vout 16n
+C2 pos 0 16n
+Ra vout neg 1K
+Rb neg 0 100K
+Vc vcc 0 10
+Ve vee 0 -10
+XU1 pos neg vcc vee vout LM741/NS ; +IN -IN  V+ V- OUT
+
+* load
+Ro vout 0 100K
+
+.end
