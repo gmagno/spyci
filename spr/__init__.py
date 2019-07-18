@@ -3,6 +3,7 @@
 import re
 import copy
 import numpy as np
+from functools import cmp_to_key
 
 
 def load_raw(filename):
@@ -62,7 +63,7 @@ def load_raw(filename):
     ret["vars"] = []
     for i in m_vars:
         ret["vars"].append(i.groupdict())
-    ret["vars"].sort(cmp=lambda x, y: int(x["idx"])-int(y["idx"]))
+    ret["vars"].sort(key=cmp_to_key(lambda x, y: int(x["idx"])-int(y["idx"])))
 
     # values
     values = m.groupdict()["values"]
