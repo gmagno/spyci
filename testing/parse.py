@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 import re
 import copy
 import numpy as np
@@ -83,3 +81,9 @@ def load_raw(filename):
     values = np.array(values, dtype=dtype)
     ret["values"] = values
     return ret
+
+filename = "./untitled.sch.sim"
+
+data = load_raw(filename)
+
+print(data)
