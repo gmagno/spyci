@@ -1,0 +1,34 @@
+{% set name = 'spr' %}
+{% set version = '0.3.0' %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  path: .
+
+build:
+  number: 0
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - pip
+    - python
+    - pytest-runner
+  run:
+    - python
+
+about:
+  home: "https://github.com/gmagno/spr"
+  license: "MIT,"
+  license_family: "MIT,"
+  license_file: "LICENSE"
+  summary: "Temperature Monitor (spr v{{ version }})"
+  doc_url: "https://spr.readthedocs.io"
+  dev_url: "https://github.com/gmagno/spr"
+
+extra:
+  recipe-maintainers:
+    - https://github.com/gmagno/

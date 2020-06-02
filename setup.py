@@ -1,62 +1,60 @@
+#!/usr/bin/env python
+"""The setup script."""
+
 from setuptools import setup, find_packages
 
-version = "0.2.1"
+with open('README.rst') as readme_file:
+    readme = readme_file.read()
 
+with open('HISTORY.rst') as history_file:
+    history = history_file.read()
 
-# Always prefer setuptools over distutils
-from setuptools import setup, find_packages
-# To use a consistent encoding
-from codecs import open
-from os import path
+requirements = [
+    'matplotlib',
+    'numpy',
+    'tabulate',
+]
 
-here = path.abspath(path.dirname(__file__))
+setup_requirements = [
+    'pytest-runner',
+]
 
-# Get the long description from the README file
-with open(path.join(here, "README.md"), encoding="utf-8") as f:
-    long_description = f.read()
-
-# Get requirements from requirements.txt file
-with open(path.join(here, "requirements.txt")) as f:
-    requirements = f.read().replace("==", ">=").splitlines()
-
-# Get requirements from requirements-dev.txt file
-with open(path.join(here, "requirements-dev.txt")) as f:
-    requirements_dev = f.read().replace("==", ">=").splitlines()
+test_requirements = [
+    'pytest>=3',
+]
 
 setup(
-    name="spr",
-    version=version,
-    description="A tiny Python package to parse spice raw data files",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
-    url="https://github.com/goncalo-godwitlabs/spr",
-    author="goncalo-godwitlabs",
-    author_email="goncalo@godwitlabs.com",
+    author="Gonçalo Magno",
+    author_email='goncalo@gmagno.dev',
+    python_requires='>=3.5',
     classifiers=[
-        "Development Status :: 3 - Alpha",
-        "Intended Audience :: Developers",
-        "License :: OSI Approved :: MIT License",
-        "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
-        "Programming Language :: Python :: 2.7",
+        'Development Status :: 2 - Pre-Alpha',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
+        'Natural Language :: English',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ],
-    keywords="spice matplotlib rawspice raw",
-    packages=find_packages(
-        exclude=[
-            "examples",
-            "tests"
-        ]),
+    description="Spice Raw Parser",
+    entry_points={
+        'console_scripts': [
+            'spr=spr.cli:main',
+        ],
+    },
     install_requires=requirements,
-    extras_require={
-        "dev": requirements_dev,
-    },
-    data_files=[(
-        '.', [
-            "requirements.txt",
-            "requirements-dev.txt",
-        ]
-    )],
-    project_urls={
-        "Bug Reports": "https://github.com/goncalo-godwitlabs/spr/issues",
-        "Source": "https://github.com/goncalo-godwitlabs/spr",
-    },
+    license="MIT license",
+    long_description=readme + '\n\n' + history,
+    include_package_data=True,
+    keywords='spr',
+    name='spr',
+    packages=find_packages(include=['spr', 'spr.*']),
+    setup_requires=setup_requirements,
+    test_suite='tests',
+    tests_require=test_requirements,
+    url='https://github.com/gmagno/spr',
+    version='0.3.0',
+    zip_safe=False,
 )

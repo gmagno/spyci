@@ -1,0 +1,18 @@
+language: python
+python:
+- 3.8
+- 3.7
+- 3.6
+- 3.5
+install: pip install -U tox-travis
+script: tox
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: gmagno
+  password:
+    secure: IqzhKy10HnefTeqLk9//Q9MNHEuSWPE702DkkbvwviXf3Qv/5ziFoSHqKa/qNcHjicHWdS8cwWdn1eOH0W+aMuxIMEG+X6Z6B249WqicsLo/1es+5Wt0ok9H/kEAp+3WiJH7+0TdQzw8xRafj4/xV6MFd7HmzKcUDvPEfo9hgcs2w1B83awT+ZW1xgio/8U/rvxo+uqQjCdi1c4iPZAqzLn3yU6fKRUE2rqtFot9AtMfp9SbIHT5Ce1a2/BOU4bTD4wDtZkdj0KtpxBu7gTJ6o70TuHBAA55utQmEw3KsyUwkVFjpD+BS8v8R1s7Cy2FoKuU1bSA0fWDSKfmid2grnaYR1q9GhTn4jBV7G9tasvU97ZKrvT8/vX1f5L0dJt+bueqNnEqSNVrUn1gt1fV+lDz0ssslpjHQtWCNyFTtZV0HgKK19pjv84LrpUZTG20Wgg7aZS1jB9qfF0XNPKGUF+TpmgGPHjiLmzUZov5oiAANrlH8bFWBtFevM7L68dgWV4d/FCqTnLHOeD5Mdb5ipmJ4EjjQqCxZM51LO+zO3YL5ZhQsTBhj2VdaEKrIMa5i8X/+7ObQbxp5dPeu7ZEEA+txahORBuBtNop3SCxH/7ZweIGbhUKc/0el2G12uI1WCzQLofmlPFDrM0A1HT1tRduKguzfSoZBB7vbQNyuew=
+  on:
+    tags: true
+    repo: gmagno/spr
+    python: 3.8
