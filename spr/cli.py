@@ -8,7 +8,7 @@ from spr import spr
 
 def parse_args():
     description = textwrap.dedent("""
-        Spice Raw Parser (spr v0.6.0) -- parses ngspice raw data files and
+        Spice Raw Parser (spr v0.6.1) -- parses ngspice raw data files and
         plots the specified variables.
         For full documentation check the repo: https://github.com/gmagno/spr
     """)
@@ -122,7 +122,7 @@ def parse_args():
 def main():
     kwargs = parse_args()
     if kwargs['version']:
-        print("Spice Raw Parse -- spr v0.6.0")
+        print("Spice Raw Parse -- spr v0.6.1")
         return 0
 
     if kwargs['list_variables']:
