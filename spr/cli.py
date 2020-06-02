@@ -36,7 +36,7 @@ def parse_args():
             $ %(prog)s
 
             # List variables that can be plotted
-            $ %(prog)s -l                                                                                                2135ms  Mon Jun  1 15:18:27 2020
+            $ %(prog)s -l
             Variables:
 
             idx  name        type

@@ -201,7 +201,7 @@ Check the directory `examples/amplifier/` for details on the cirtcuit and the si
 
 The schematic:
 
-.. image:: ../examples/amplifier/schematic.svg
+.. image:: img/amplifier_schematic.svg
     :width: 630px
     :align: center
     :height: 332px
@@ -216,7 +216,7 @@ Run the simulation with::
 
 which will fire ngspice generating output.log and rawspice.raw files and also plots the voltages `vin` and `vout`.
 
-.. image:: ../examples/amplifier/plot.svg
+.. image:: img/amplifier_plot.svg
     :width: 630px
     :align: center
     :height: 496px
@@ -230,7 +230,7 @@ Check the directory `examples/lp_filter/` for details on the cirtcuit and the si
 
 The schematic:
 
-.. image:: ../examples/lp_filter/schematic.svg
+.. image:: img/lp_filter_schematic.svg
     :width: 636px
     :align: center
     :height: 431px
@@ -245,7 +245,7 @@ Run the simulation with::
 
 which will fire ngspice generating output.log and rawspice.raw files and also plots the gain `vout`/`vin` in dB.
 
-.. image:: ../examples/lp_filter/plot.svg
+.. image:: img/lp_filter_plot.svg
     :width: 636px
     :align: center
     :height: 501px
