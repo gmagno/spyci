@@ -1,5 +1,5 @@
 {% set name = 'spyci' %}
-{% set version = '0.7.4' %}
+{% set version = '1.0.0' %}
 
 package:
   name: "{{ name|lower }}"
