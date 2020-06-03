@@ -8,7 +8,7 @@ from spyci import spyci
 
 def parse_args():
     description = textwrap.dedent("""
-        Spyci (spyci v1.0.1) -- parses ngspice raw data files and
+        Spyci (spyci v1.0.2) -- parses ngspice raw data files and
         plots the specified variables.
         For full documentation check the repo: https://github.com/gmagno/spyci
     """)
@@ -124,7 +124,7 @@ def parse_args():
 def main():
     kwargs = parse_args()
     if kwargs['version']:
-        print("Spice Raw Parse -- spyci v1.0.1")
+        print("Spice Raw Parse -- spyci v1.0.2")
         return 0
 
     if kwargs['list_variables']:
