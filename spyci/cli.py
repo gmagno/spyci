@@ -1,28 +1,30 @@
-"""Console script for spr."""
+"""Console script for spyci."""
 import argparse
 import textwrap
 import sys
 
-from spr import spr
+from spyci import spyci
 
 
 def parse_args():
     description = textwrap.dedent("""
-        Spice Raw Parser (spr v0.6.1) -- parses ngspice raw data files and
+        Spyci (spyci v0.7.4) -- parses ngspice raw data files and
         plots the specified variables.
-        For full documentation check the repo: https://github.com/gmagno/spr
+        For full documentation check the repo: https://github.com/gmagno/spyci
     """)
 
     epilog = r"""
-          /#######  /######   /######
-         /##_____/ /##__  ## /##__  ##
-        |  ###### | ##  \ ##| ##  \__/
-         \____  ##| ##  | ##| ##
-         /#######/| #######/| ##
-        |_______/ | ##____/ |__/
-                  | ##
-                  | ##
-                  |__/
+                                                 /##
+                                                |__/
+          /#######  /######  /##   /##  /####### /##
+         /##_____/ /##__  ##| ##  | ## /##_____/| ##
+        |  ###### | ##  \ ##| ##  | ##| ##      | ##
+         \____  ##| ##  | ##| ##  | ##| ##      | ##
+         /#######/| #######/|  #######|  #######| ##
+        |_______/ | ##____/  \____  ## \_______/|__/
+                  | ##       /##  | ##              
+                  | ##      |  ######/              
+                  |__/       \______/               
     """
 
     epilog += textwrap.dedent("""
@@ -80,7 +82,7 @@ def parse_args():
             This software is licensed under the MIT License.
     """)
     parser = argparse.ArgumentParser(
-        prog="spr",
+        prog="spyci",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         description=description,
         epilog=epilog)
@@ -122,12 +124,12 @@ def parse_args():
 def main():
     kwargs = parse_args()
     if kwargs['version']:
-        print("Spice Raw Parse -- spr v0.6.1")
+        print("Spice Raw Parse -- spyci v0.7.4")
         return 0
 
     if kwargs['list_variables']:
         try:
-            spr.list_vars(kwargs['raw_file'])
+            spyci.list_vars(kwargs['raw_file'])
         except FileNotFoundError as e:
             print("Error: {}: {}".format(e.strerror, e.filename))
             return -1
@@ -135,18 +137,18 @@ def main():
 
     if kwargs['out_formats']:
         try:
-            spr.img_formats()
+            spyci.img_formats()
         except FileNotFoundError as e:
             print("Error: {}: {}".format(e.strerror, e.filename))
             return -1
         return 0
 
     try:
-        spr.plot(kwargs['raw_file'], kwargs['vars'], kwargs['out_image'])
+        spyci.plot(kwargs['raw_file'], kwargs['vars'], kwargs['out_image'])
     except FileNotFoundError as e:
         print("Error: {}: {}".format(e.strerror, e.filename))
         return -1
-    except spr.InvalidVarsError:
+    except spyci.InvalidVarsError:
         print("Error: Could not find variables: {}. For a list of valid "
               "variables run with '-l' flag".format(kwargs['vars']))
         return -1

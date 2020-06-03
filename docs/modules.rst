@@ -1,7 +1,7 @@
-spr
-===
+spyci
+=====
 
 .. toctree::
    :maxdepth: 4
 
-   spr
+   spyci

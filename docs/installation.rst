@@ -8,13 +8,13 @@ Installation
 Stable release
 --------------
 
-To install Spice Raw Parser, run this command in your terminal:
+To install Spyci, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install spr
+    $ pip install spyci
 
-This is the preferred method to install Spice Raw Parser, as it will always install the most recent stable release.
+This is the preferred method to install Spyci, as it will always install the most recent stable release.
 
 If you don't have `pip`_ installed, this `Python installation guide`_ can guide
 you through the process.
@@ -26,19 +26,19 @@ you through the process.
 From sources
 ------------
 
-The sources for Spice Raw Parser can be downloaded from the `Github repo`_.
+The sources for Spyci can be downloaded from the `Github repo`_.
 
 You can either clone the public repository:
 
 .. code-block:: console
 
-    $ git clone git://github.com/gmagno/spr
+    $ git clone git://github.com/gmagno/spyci
 
 Or download the `tarball`_:
 
 .. code-block:: console
 
-    $ curl -OJL https://github.com/gmagno/spr/tarball/master
+    $ curl -OJL https://github.com/gmagno/spyci/tarball/master
 
 Once you have a copy of the source, you can install it with:
 
@@ -47,5 +47,5 @@ Once you have a copy of the source, you can install it with:
     $ python setup.py install
 
 
-.. _Github repo: https://github.com/gmagno/spr
-.. _tarball: https://github.com/gmagno/spr/tarball/master
+.. _Github repo: https://github.com/gmagno/spyci
+.. _tarball: https://github.com/gmagno/spyci/tarball/master

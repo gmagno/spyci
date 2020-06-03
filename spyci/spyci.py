@@ -16,8 +16,8 @@ class InvalidVarsError(Exception):
 
 def load_raw(rawfile):
     """
-    Parses an ascii raw data file, generates and returns a dictionary with the
-    following structure:
+    Parses an ascii raw data file and returns a dictionary with the following
+    structure:
         {
             'title': <str>,
             'date:': <str>,
@@ -39,11 +39,12 @@ def load_raw(rawfile):
             }
         }
 
-        Arguments:
-            :filename: path to file with raw data.
-        Returns
-            dict with structure described above.
+    Arguments:
+        :filename: path to file with raw data.
+    Returns
+        dict with structure described above.
     """
+
     path = os.path.realpath(rawfile)
     data = pathlib.Path(path).read_text()
     ret = {}

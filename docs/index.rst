@@ -1,4 +1,4 @@
-Welcome to Spice Raw Parser's documentation!
+Welcome to Spyci's documentation!
 ======================================
 
 .. toctree::

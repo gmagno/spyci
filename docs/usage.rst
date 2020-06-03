@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use Spice Raw Parser in a project::
+To use Spyci in a project::
 
-    import spr
+    import spyci

@@ -1,4 +1,4 @@
-* Spice Raw Parser version:
+* Spyci version:
 * Python version:
 * Operating System:
 

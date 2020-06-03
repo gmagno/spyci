@@ -9,11 +9,7 @@ with open('README.rst') as readme_file:
 with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
-requirements = [
-    'matplotlib',
-    'numpy',
-    'tabulate',
-]
+requirements = []
 
 setup_requirements = [
     'pytest-runner',
@@ -41,20 +37,20 @@ setup(
     description="Spice Raw Parser",
     entry_points={
         'console_scripts': [
-            'spr=spr.cli:main',
+            'spyci=spyci.cli:main',
         ],
     },
     install_requires=requirements,
     license="MIT license",
     long_description=readme + '\n\n' + history,
     include_package_data=True,
-    keywords='spr',
-    name='spr',
-    packages=find_packages(include=['spr', 'spr.*']),
+    keywords='spyci',
+    name='spyci',
+    packages=find_packages(include=['spyci', 'spyci.*']),
     setup_requires=setup_requirements,
     test_suite='tests',
     tests_require=test_requirements,
-    url='https://github.com/gmagno/spr',
-    version='0.6.1',
+    url='https://github.com/gmagno/spyci',
+    version='0.7.4',
     zip_safe=False,
 )

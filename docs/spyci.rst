@@ -1,21 +1,21 @@
-spr package
-===========
+spyci package
+=============
 
 Submodules
 ----------
 
-spr.cli module
---------------
+spyci.cli module
+----------------
 
-.. automodule:: spr.cli
+.. automodule:: spyci.cli
     :members:
     :undoc-members:
     :show-inheritance:
 
-spr.spr module
---------------
+spyci.spyci module
+------------------
 
-.. automodule:: spr.spr
+.. automodule:: spyci.spyci
     :members:
     :undoc-members:
     :show-inheritance:
@@ -24,7 +24,7 @@ spr.spr module
 Module contents
 ---------------
 
-.. automodule:: spr
+.. automodule:: spyci
     :members:
     :undoc-members:
     :show-inheritance:

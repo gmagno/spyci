@@ -1,5 +1,5 @@
-{% set name = 'spr' %}
-{% set version = '0.6.1' %}
+{% set name = 'spyci' %}
+{% set version = '0.7.4' %}
 
 package:
   name: "{{ name|lower }}"
@@ -21,13 +21,13 @@ requirements:
     - python
 
 about:
-  home: "https://github.com/gmagno/spr"
+  home: "https://github.com/gmagno/spyci"
   license: "MIT,"
   license_family: "MIT,"
   license_file: "LICENSE"
-  summary: "Temperature Monitor (spr v{{ version }})"
-  doc_url: "https://spr.readthedocs.io"
-  dev_url: "https://github.com/gmagno/spr"
+  summary: "Temperature Monitor (spyci v{{ version }})"
+  doc_url: "https://spyci.readthedocs.io"
+  dev_url: "https://github.com/gmagno/spyci"
 
 extra:
   recipe-maintainers:

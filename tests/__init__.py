@@ -1,1 +1,1 @@
-"""Unit test package for spr."""
+"""Unit test package for spyci."""

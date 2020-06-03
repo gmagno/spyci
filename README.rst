@@ -1,24 +1,24 @@
-================
-Spice Raw Parser
-================
+=====
+Spyci
+=====
 
 A tiny Python package to parse and plot spice raw data files.
 
 
-.. image:: https://img.shields.io/pypi/v/spr.svg
-    :target: https://pypi.python.org/pypi/spr
+.. image:: https://img.shields.io/pypi/v/spyci.svg
+    :target: https://pypi.python.org/pypi/spyci
 
-.. image:: https://img.shields.io/travis/gmagno/spr.svg
-    :target: https://travis-ci.com/gmagno/spr
+.. image:: https://img.shields.io/travis/gmagno/spyci.svg
+    :target: https://travis-ci.com/gmagno/spyci
 
-.. image:: https://readthedocs.org/projects/spr/badge/?version=latest
-    :target: https://spr.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/spyci/badge/?version=latest
+    :target: https://spyci.readthedocs.io/en/latest/?badge=latest
     :alt: Documentation Status
 
 
 
 * Free software: MIT license
-* Documentation: https://spr.readthedocs.io.
+* Documentation: https://spyci.readthedocs.io.
 
 
 Getting Started
@@ -36,7 +36,7 @@ From PyPI
 
 ::
 
-    $ pip install spr  # it is recommended to this in a virtual environment
+    $ pip install spyci  # it is recommended to this in a virtual environment
 
 
 From the github repo
@@ -44,15 +44,15 @@ From the github repo
 
 ::
 
-    $ pip install git+https://github.com/gmagno/spr.git
+    $ pip install git+https://github.com/gmagno/spyci.git
 
 
 or
 
 ::
 
-    $ git clone git@github.com:gmagno/spr.git
-    $ cd spr/
+    $ git clone git@github.com:gmagno/spyci.git
+    $ cd spyci/
     $ python setup.py install
 
 
@@ -61,29 +61,29 @@ Usage
 
 From python run::
 
-    >>> from spr import spr
-    >>> data = spr.load_raw("/path/to/rawspice.raw")  # see 'Data structure' section below
+    >>> from spyci import spyci
+    >>> data = spyci.load_raw("/path/to/rawspice.raw")  # see 'Data structure' section below
 
 
 Or just use the CLI::
 
-    $ spr -r /path/to/rawspice.raw vin vout
+    $ spyci -r /path/to/rawspice.raw vin vout
 
 for more details use::
 
-    $ spr -h
-    usage: spr [-h] [-v] [-r RAW_FILE] [-l] [-f] [-o OUT_IMAGE] ...
+    $ spyci -h
+    usage: spyci [-h] [-v] [-r RAW_FILE] [-l] [-f] [-o OUT_IMAGE] ...
     
-    Spice Raw Parser (spr v0.3.0) -- parses ngspice raw data files and
+    Spyci (spyci v0.6.1) -- parses ngspice raw data files and
     plots the specified variables.
-    For full documentation check the repo: https://github.com/gmagno/spr
+    For full documentation check the repo: https://github.com/gmagno/spyci
     
     positional arguments:
       VARS                  List of variables to plot
     
     optional arguments:
       -h, --help            show this help message and exit
-      -v, --version         shows spr version
+      -v, --version         shows spyci version
       -r RAW_FILE, --raw-file RAW_FILE
                             path to raw file to be parsed
       -l, --list-variables  lists variables that can be plotted
@@ -92,27 +92,29 @@ for more details use::
                             path to output image file, use -f, to list supported
                             formats
     
-              /#######  /######   /######
-             /##_____/ /##__  ## /##__  ##
-            |  ###### | ##  \ ##| ##  \__/
-             \____  ##| ##  | ##| ##
-             /#######/| #######/| ##
-            |_______/ | ##____/ |__/
-                      | ##
-                      | ##
-                      |__/
+                                                     /##
+                                                    |__/
+              /#######  /######  /##   /##  /####### /##
+             /##_____/ /##__  ##| ##  | ## /##_____/| ##
+            |  ###### | ##  \ ##| ##  | ##| ##      | ##
+             \____  ##| ##  | ##| ##  | ##| ##      | ##
+             /#######/| #######/|  #######|  #######| ##
+            |_______/ | ##____/  \____  ## \_______/|__/
+                      | ##       /##  | ##
+                      | ##      |  ######/
+                      |__/       \______/
     
     return:
-        The return value of spr is 0 if the raw file is successfully
+        The return value of spyci is 0 if the raw file is successfully
         parsed and plotted.
     
     examples:
         # Run without arguments will attempt to load rawspice.raw from cwd
         # and plot all variables
-        $ spr
+        $ spyci
     
         # List variables that can be plotted
-        $ spr -l                                                                                                2135ms  Mon Jun  1 15:18:27 2020
+        $ spyci -l
         Variables:
     
         idx  name        type
@@ -124,19 +126,19 @@ for more details use::
             5  i(vsource)  current
     
         # Load 'some/location/sim.raw' and plot variables 'i(l1)' and 'vo'
-        $ spr -r some/location/sim.raw "i(l1)" vo
+        $ spyci -r some/location/sim.raw "i(l1)" vo
     
         # Indices can be used insted of variable names, this is equivalent
         # to the previous example
-        $ spr -r some/location/sim.raw 1 4
+        $ spyci -r some/location/sim.raw 1 4
     
         # Save your plot to the file system
-        $ spr -o myplot.png 1 4
+        $ spyci -o myplot.png 1 4
     
         # Different image formats are supported, just use the correct
         # extension, {.png, .svg, .pdf, ...}. For a list of supported
         # formats run with -f flag
-        $ spr -f
+        $ spyci -f
         Supported output image file formats:
     
         ext    format
@@ -211,7 +213,7 @@ Run the simulation with::
 
     $ cd examples/amplifier
     $ ngspice -r rawspice.raw -o output.log main.cir
-    $ spr vout vin
+    $ spyci vout vin
 
 
 which will fire ngspice generating output.log and rawspice.raw files and also plots the voltages `vin` and `vout`.
@@ -240,7 +242,7 @@ Run the simulation with::
 
     $ cd examples/lp_filter
     $ ngspice -r rawspice.raw -o output.log main.cir
-    $ spr vout vin
+    $ spyci vout vin
 
 
 which will fire ngspice generating output.log and rawspice.raw files and also plots the gain `vout`/`vin` in dB.
@@ -254,4 +256,4 @@ which will fire ngspice generating output.log and rawspice.raw files and also pl
 License
 ^^^^^^^
 
-This project is licensed under the MIT License - see the `LICENSE <https://github.com/gmagno/spr/blob/master/LICENSE>`_ file for details
+This project is licensed under the MIT License - see the `LICENSE <https://github.com/gmagno/spyci/blob/master/LICENSE>`_ file for details
