@@ -150,6 +150,12 @@ def plot(rawfile, pvars=None, outimg=None):
         ax1.set_yscale('log')
         ax2.set_yscale('log')
         ax1.set_xlabel("Frequency (Hz)")
+    elif d['plotname'] == "DC transfer characteristic":
+        xx = d['values']['sweep']
+        ax2.set_xscale('linear')
+        ax1.set_yscale('linear')
+        ax2.set_yscale('linear')
+        ax1.set_xlabel("Sweep (V)")
     else:
         print("Error: unsupported plotname")
         return -1

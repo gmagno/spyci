@@ -1,0 +1,24 @@
+AoE 2_13 differential amplifier
+* this is 2_13.cir file
+* supply voltage resources
+vp 77 0 dc 15V
+vn 88 0 dc -15V
+* input voltages
+v1 1 0 dc 0.8V
+v2 2 0 dc 0
+* bipolar transistors
+q1 77 1 11 QBC547A
+q2 22 2 21 QBC547A
+*emitter resistors
+re1 11 20 1k
+re2 21 20 1k
+*collector resistor
+rc 77 22 75k
+*common emitter resistor
+r1 20 88 75k
+
+* model for a pnp transistors
+.include BC547A.PRM
+
+.end 
+
