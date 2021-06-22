@@ -8,7 +8,7 @@ import re
 import matplotlib.pyplot as plt
 import numpy as np
 from tabulate import tabulate
-
+import pandas as pd
 
 class InvalidVarsError(Exception):
     pass
@@ -86,6 +86,19 @@ def load_raw(rawfile):
     values = np.array(values, dtype=dtype)
     ret['values'] = values
     return ret
+
+def to_dataframe(rawfile):
+    """
+    Parses an ascii raw data file and returns an equivalent dataframe
+    
+    Arguments:
+        :rawfile: path to file with raw data.
+    Returns
+        pandas dataframe 
+    """
+    data = load_raw(rawfile)
+    df = pd.DataFrame.from_dict(data["values"])
+    return df
 
 
 def list_vars(rawfile):
