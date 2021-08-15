@@ -1,0 +1,51 @@
+Variables:
+
+  idx  name                                        type
+-----  ------------------------------------------  --------------
+    1                                              voltage
+   10  i(@m.xm2.msky130_fd_pr__nfet_01v8[is])      current dims=0
+   11  i(@m.xm3.msky130_fd_pr__nfet_01v8_lvt[ib])  current dims=0
+   12  i(@m.xm3.msky130_fd_pr__nfet_01v8_lvt[id])  current
+   13  i(@m.xm3.msky130_fd_pr__nfet_01v8_lvt[ig])  current dims=0
+   14  i(@m.xm3.msky130_fd_pr__nfet_01v8_lvt[is])  current dims=0
+   15  i(@m.xm4.msky130_fd_pr__nfet_01v8[ib])      current dims=0
+   16  i(@m.xm4.msky130_fd_pr__nfet_01v8[id])      current
+   17  i(@m.xm4.msky130_fd_pr__nfet_01v8[ig])      current dims=0
+   18  i(@m.xm4.msky130_fd_pr__nfet_01v8[is])      current dims=0
+   19  b                                           voltage
+    2  @include[current]                           capacitance
+   20  d1v8                                        voltage
+   21  g1v8                                        voltage
+   22  m.xm1.msky130_fd_pr__nfet_01v8_lvt#body     voltage
+   23  m.xm1.msky130_fd_pr__nfet_01v8_lvt#dbody    voltage
+   24  m.xm1.msky130_fd_pr__nfet_01v8_lvt#sbody    voltage
+   25  m.xm2.msky130_fd_pr__nfet_01v8#body         voltage
+   26  m.xm2.msky130_fd_pr__nfet_01v8#dbody        voltage
+   27  m.xm2.msky130_fd_pr__nfet_01v8#sbody        voltage
+   28  m.xm3.msky130_fd_pr__nfet_01v8_lvt#body     voltage
+   29  m.xm3.msky130_fd_pr__nfet_01v8_lvt#dbody    voltage
+    3  i(@m.xm1.msky130_fd_pr__nfet_01v8_lvt[ib])  current dims=0
+   30  m.xm3.msky130_fd_pr__nfet_01v8_lvt#sbody    voltage
+   31  m.xm4.msky130_fd_pr__nfet_01v8#body         voltage
+   32  m.xm4.msky130_fd_pr__nfet_01v8#dbody        voltage
+   33  m.xm4.msky130_fd_pr__nfet_01v8#sbody        voltage
+   34  net1                                        voltage
+   35  net2                                        voltage
+   36  net3                                        voltage
+   37  net4                                        voltage
+   38  s                                           voltage
+   39  sky130_fd_pr__esd_nfet_05v0_nvt.pm3         voltage
+    4  i(@m.xm1.msky130_fd_pr__nfet_01v8_lvt[id])  current
+   40  i(vb)                                       current
+   41  i(vd)                                       current
+   42  i(vg)                                       current
+   43  i(vn_long)                                  current
+   44  i(vn_lvt_long)                              current
+   45  i(vn_lvt_short)                             current
+   46  i(vn_short)                                 current
+   47  i(vs)                                       current
+    5  i(@m.xm1.msky130_fd_pr__nfet_01v8_lvt[ig])  current dims=0
+    6  i(@m.xm1.msky130_fd_pr__nfet_01v8_lvt[is])  current dims=0
+    7  i(@m.xm2.msky130_fd_pr__nfet_01v8[ib])      current dims=0
+    8  i(@m.xm2.msky130_fd_pr__nfet_01v8[id])      current
+    9  i(@m.xm2.msky130_fd_pr__nfet_01v8[ig])      current dims=0

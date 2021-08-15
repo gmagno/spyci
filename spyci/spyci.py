@@ -60,13 +60,23 @@ def load_raw(rawfile):
     ret = copy.deepcopy(m.groupdict())
     ret.pop('values')
 
-    # vars
-    vars = m.groupdict()['vars']
-    pattern = (r"\s*(?P<idx>\d+)\s+" r"(?P<name>\S+)\s+" r"(?P<type>.*)\s*")
-    m_vars = re.finditer(pattern, vars)
+    # Determine variables in raw file, and generate dictionary describing them
+
+    # Break variables section into lines
+    vars = m.groupdict()['vars'].splitlines()
     ret['vars'] = []
-    for i in m_vars:
-        ret['vars'].append(i.groupdict())
+
+    # Per line, variable data is seperated by tab. Split up and form dictionary. First
+    # line is empty so skip it
+    for index,line in enumerate(vars[1:]):
+        content = line.split('\t')
+
+        # Should be 4 entries per line. First is empty. Save the other 3
+        if (len(content) == 4):
+            ret['vars'].append({'idx' : content[1], 'name' : content[2], 'type' : content[3]})
+        else:
+            print("Badly described variable at line "+str(index))
+            ret['vars'].append({'idx' : "UNKNOWN", 'name' : "UNKNOWN", 'type' : "UNKNOWN"})
 
     # values
     values = m.groupdict()['values']
@@ -86,7 +96,6 @@ def load_raw(rawfile):
     values = np.array(values, dtype=dtype)
     ret['values'] = values
     return ret
-
 
 def list_vars(rawfile):
     """Loads the rawspice file and prints the variables to plot.
