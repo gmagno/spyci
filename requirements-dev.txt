@@ -17,7 +17,7 @@ rope==0.17.0
 rstcheck==3.3.1
 sphinx-rtd-theme==0.4.3
 
-ipython==7.9.0
+ipython==7.16.3
 
 matplotlib==3.0.3
 numpy==1.18.1
